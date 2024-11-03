@@ -2,15 +2,19 @@
   <nav class="nav">
     <RouterLink to="/" class="logo">MA</RouterLink>
     <div class="nav-links">
-      <RouterLink to="/about" class="nav-link">About</RouterLink>
-      <RouterLink to="/experience" class="nav-link">Experience</RouterLink>
-      <RouterLink to="/publications" class="nav-link">Publications</RouterLink>
-      <RouterLink to="/contact" class="nav-link">Contact</RouterLink>
+      <RouterLink to="/#about" class="nav-link">Skills</RouterLink>
+      <RouterLink to="/#experience" class="nav-link">Experience</RouterLink>
+      <RouterLink to="/#publications" class="nav-link">Publications</RouterLink>
+      <RouterLink to="/#contact" class="nav-link">Contact</RouterLink>
     </div>
   </nav>
-
+  <FloatingNav />
   <RouterView />
 </template>
+
+<script setup>
+import FloatingNav from './components/FloatingNav.vue';
+</script>
 
 <style scoped>
 .nav {

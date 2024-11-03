@@ -2,11 +2,15 @@
     <div class="skills-grid">
         <Skillcard :title="'AI/ML'" 
         :skills="ai_ml_skills"
-        :icons="[Pytorch, LlamaIndex, Langchain]"
+        :icons="[Pytorch,  Langchain]"
         />
         <Skillcard :title="'Frontend'" 
         :skills="frontend_skills"
-        :icons="[VueIcon, ReactIcon]"
+        :icons="[VueIcon, ReactIcon, ElectronIcon]"
+        />
+        <Skillcard :title="'Backend'" 
+        :skills="backend_skills"
+        :icons="[NodeJs]"
         />
     </div>
 </template>
@@ -14,9 +18,10 @@
 import Skillcard from './Skillcard.vue';
 import Pytorch from './icons/Pytorch.vue';
 import VueIcon from './icons/VueIcon.vue';
-import LlamaIndex from './icons/LlamaIndex.vue';
 import ReactIcon from './icons/ReactIcon.vue';
 import Langchain from './icons/Langchain.vue';
+import ElectronIcon from './icons/ElectronIcon.vue';
+import NodeJs from './icons/NodeJs.vue';
 const ai_ml_skills = [
     'LLM Fine-tuning & Deployment',
     'RAG Systems',
@@ -32,13 +37,22 @@ const frontend_skills = [
     'Electron'
 ]
 
+const backend_skills = [
+    'Node.js',
+    'Express.js',
+    'PostgreSQL', 
+    'Serverless', 
+    'Docker', 
+    'GCP',
+]
+
 
 
 </script>
 <style scoped>
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);  /* Changed from auto-fit to 2 columns */
     gap: 2rem;
     margin-bottom: 4rem;
 }

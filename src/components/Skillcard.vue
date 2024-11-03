@@ -51,6 +51,9 @@ defineProps({
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
+  min-height: 320px; /* Add consistent height */
+  display: flex;
+  flex-direction: column;
 }
 
 .skill-card:hover {
@@ -66,17 +69,20 @@ defineProps({
 .skill-icons {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased gap */
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
+
+
 
 .skill-icon {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem; /* Increased size */
+  height: 2.5rem;
   opacity: 0;
   transform: translateY(10px);
   animation: fadeInUp 0.5s ease forwards;
@@ -118,9 +124,10 @@ defineProps({
 
 .skill-title {
   color: var(--primary);
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.6rem; /* Increased size */
+  font-weight: 700; /* Bolder */
   margin-bottom: 1.5rem;
+  letter-spacing: -0.5px; /* Added letter spacing */
   background: linear-gradient(90deg, var(--primary), #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -133,15 +140,16 @@ defineProps({
 }
 
 .skill-item {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   color: #ccd6f6;
-  font-size: 0.95rem;
+  font-size: 1rem;
   opacity: 0;
   transform: translateX(-10px);
   animation: slideIn 0.5s ease forwards;
+  line-height: 1.4;
 }
 
 .skill-bullet {
@@ -187,15 +195,16 @@ defineProps({
 @media (max-width: 768px) {
   .skill-card {
     padding: 2rem;
+    min-height: 280px; /* Adjusted for mobile */
   }
 
   .skill-icon {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .skill-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 </style>

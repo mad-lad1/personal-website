@@ -9,9 +9,19 @@
     <div class="mode-toggle" @click="toggleMode" ref="toggleSwitch">
       <div class="toggle-track" :class="{ 'story-mode': isStoryMode }">
         <div class="toggle-indicator">
-          <v-icon name="fa-book-open"  v-if="isStoryMode" animation="pulse" fill="#000"/>
-          <v-icon name="gi-achievement" v-else animation="pulse" fill="#fff" scale="1.5"/>
-          
+          <v-icon
+            name="fa-book-open"
+            v-if="isStoryMode"
+            animation="pulse"
+            fill="#000"
+          />
+          <v-icon
+            name="gi-achievement"
+            v-else
+            animation="pulse"
+            fill="#fff"
+            scale="1.5"
+          />
         </div>
       </div>
     </div>
@@ -19,15 +29,15 @@
     <div class="experience-content" ref="content">
       <transition name="fade" mode="out-in">
         <div v-if="isStoryMode" class="story-content" key="story">
-            <div class="story-paragraphs">
-          <p
-            v-for="(paragraph, index) in storyParagraphs"
-            :key="index"
-            class="story-paragraph"
-            :class="{ 'first-paragraph': index === 0 }"
-            :style="{ '--delay': `${index * 0.1}s` }"
-          >
-            {{ paragraph }}
+          <div class="story-paragraphs">
+            <p
+              v-for="(paragraph, index) in storyParagraphs"
+              :key="index"
+              class="story-paragraph"
+              :class="{ 'first-paragraph': index === 0 }"
+              :style="{ '--delay': `${index * 0.1}s` }"
+            >
+              {{ paragraph }}
             </p>
           </div>
         </div>
@@ -101,8 +111,6 @@ const toggleMode = () => {
   })
 }
 
-
-
 const onMouseEnter = () => {
   gsap.to(card.value, {
     y: -10,
@@ -120,14 +128,11 @@ const onMouseLeave = () => {
     ease: 'power2.in',
   })
 }
-
-
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
-
 
 .experience-card {
   background: var(--card-bg);
@@ -290,8 +295,6 @@ const onMouseLeave = () => {
   color: var(--primary);
   font-size: 1rem;
 }
-
-
 
 .arrow-icon {
   transition: transform 0.3s ease;

@@ -1,11 +1,10 @@
 <template lang="">
   <section id="about">
     <h2 class="section-title">Skills</h2>
-        <Skills />
+    <Skills />
   </section>
 </template>
 <script setup>
-import Skills from '@/components/skills/Skills.vue';
-import Hero from '@/components/Hero.vue';
+import Skills from '@/components/skills/Skills.vue'
+import Hero from '@/components/Hero.vue'
 </script>
-

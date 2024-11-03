@@ -7,15 +7,15 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
     },
     {
       path: '/:section',
       redirect: to => {
         return { path: '/', hash: `#${to.params.section}` }
-      }
-    }
-  ]
+      },
+    },
+  ],
 })
 
 // Add smooth scrolling behavior

@@ -10,7 +10,6 @@
     style="enable-background: new 0 0 2385.7 1919.9"
     xml:space="preserve"
   >
-   
     <g>
       <path
         class="st0"
@@ -39,17 +38,16 @@
 </template>
 
 <style scoped>
-
-      .st0 {
-        fill: #ea4335;
-      }
-      .st1 {
-        fill: #4285f4;
-      }
-      .st2 {
-        fill: #34a853;
-      }
-      .st3 {
-        fill: #fbbc05;
-      }
+.st0 {
+  fill: #ea4335;
+}
+.st1 {
+  fill: #4285f4;
+}
+.st2 {
+  fill: #34a853;
+}
+.st3 {
+  fill: #fbbc05;
+}
 </style>

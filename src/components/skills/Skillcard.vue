@@ -74,8 +74,6 @@ defineProps({
   margin-bottom: 1rem;
 }
 
-
-
 .skill-icon {
   position: relative;
   display: flex;

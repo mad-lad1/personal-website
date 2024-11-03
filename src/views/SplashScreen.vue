@@ -14,7 +14,9 @@
         </div>
         <div v-if="showProgress" class="progress-container">
           <div class="progress-bar" :style="{ width: `${progress}%` }"></div>
-          <div class="progress-text">Loading Server... {{ Math.floor(progress) }}%</div>
+          <div class="progress-text">
+            Loading Server... {{ Math.floor(progress) }}%
+          </div>
         </div>
       </div>
     </div>
@@ -99,9 +101,15 @@ onMounted(async () => {
   border-radius: 50%;
 }
 
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
+.red {
+  background: #ff5f56;
+}
+.yellow {
+  background: #ffbd2e;
+}
+.green {
+  background: #27c93f;
+}
 
 .terminal :deep(.terminal-content) {
   padding: 20px;
@@ -160,8 +168,13 @@ onMounted(async () => {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -169,7 +182,7 @@ onMounted(async () => {
     width: 90%;
     margin: 0 20px;
   }
-  
+
   .terminal :deep(.terminal-content) {
     font-size: 1rem;
   }

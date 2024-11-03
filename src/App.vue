@@ -2,7 +2,7 @@
   <Transition name="splash">
     <SplashScreen v-if="showSplash" />
   </Transition>
-  
+
   <Transition name="fade">
     <div class="main-content" v-if="!showSplash">
       <nav class="nav">
@@ -10,7 +10,9 @@
         <div class="nav-links">
           <RouterLink to="/#experience" class="nav-link">Experience</RouterLink>
           <RouterLink to="/#about" class="nav-link">Skills</RouterLink>
-          <RouterLink to="/#publications" class="nav-link">Publications</RouterLink>
+          <RouterLink to="/#publications" class="nav-link"
+            >Publications</RouterLink
+          >
           <RouterLink to="/#contact" class="nav-link">Contact</RouterLink>
         </div>
       </nav>
@@ -21,17 +23,17 @@
 </template>
 
 <script setup>
-import FloatingNav from './components/FloatingNav.vue';
-import SplashScreen from './views/SplashScreen.vue';
-import { onMounted, ref } from 'vue';
+import FloatingNav from './components/FloatingNav.vue'
+import SplashScreen from './views/SplashScreen.vue'
+import { onMounted, ref } from 'vue'
 
-const showSplash = ref(true);
+const showSplash = ref(true)
 
 onMounted(() => {
   setTimeout(() => {
-    showSplash.value = false;
-  }, 8000);
-});
+    showSplash.value = false
+  }, 8000)
+})
 </script>
 
 <style scoped>
@@ -93,7 +95,9 @@ onMounted(() => {
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 .nav-links {

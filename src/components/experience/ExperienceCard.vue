@@ -76,7 +76,7 @@ const props = defineProps({
 const card = ref(null)
 const content = ref(null)
 const toggleSwitch = ref(null)
-const isStoryMode = ref(true)
+const isStoryMode = ref(false)
 
 const storyParagraphs = computed(() => {
   return props.experience.story.split('\n\n').filter(p => p.trim())

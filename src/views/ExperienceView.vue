@@ -9,8 +9,7 @@
 </template>
 
 <script setup>
-import ExperienceCard from '@/components/ExperienceCard.vue'
-
+import ExperienceCard from '@/components/experience/ExperienceCard.vue';
 const experiences = [
   {
     title: 'Founding Engineer',

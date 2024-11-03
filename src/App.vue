@@ -1,22 +1,71 @@
 <template>
-  <nav class="nav">
-    <RouterLink to="/" class="logo">MA</RouterLink>
-    <div class="nav-links">
-      <RouterLink to="/#about" class="nav-link">Skills</RouterLink>
-      <RouterLink to="/#experience" class="nav-link">Experience</RouterLink>
-      <RouterLink to="/#publications" class="nav-link">Publications</RouterLink>
-      <RouterLink to="/#contact" class="nav-link">Contact</RouterLink>
+  <Transition name="splash">
+    <SplashScreen v-if="showSplash" />
+  </Transition>
+  
+  <Transition name="fade">
+    <div class="main-content" v-if="!showSplash">
+      <nav class="nav">
+        <RouterLink to="/" class="logo">MA</RouterLink>
+        <div class="nav-links">
+          <RouterLink to="/#experience" class="nav-link">Experience</RouterLink>
+          <RouterLink to="/#about" class="nav-link">Skills</RouterLink>
+          <RouterLink to="/#publications" class="nav-link">Publications</RouterLink>
+          <RouterLink to="/#contact" class="nav-link">Contact</RouterLink>
+        </div>
+      </nav>
+      <FloatingNav />
+      <RouterView />
     </div>
-  </nav>
-  <FloatingNav />
-  <RouterView />
+  </Transition>
 </template>
 
 <script setup>
 import FloatingNav from './components/FloatingNav.vue';
+import SplashScreen from './views/SplashScreen.vue';
+import { onMounted, ref } from 'vue';
+
+const showSplash = ref(true);
+
+onMounted(() => {
+  setTimeout(() => {
+    showSplash.value = false;
+  }, 8000);
+});
 </script>
 
 <style scoped>
+/* Splash transition */
+.splash-enter-active,
+.splash-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.splash-enter-from,
+.splash-leave-to {
+  opacity: 0;
+}
+
+/* Main content transition */
+.fade-enter-active {
+  transition: all 0.6s ease-out;
+}
+
+.fade-leave-active {
+  transition: all 0.6s ease-in;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Navigation styles */
 .nav {
   position: fixed;
   top: 0;
@@ -85,5 +134,10 @@ import FloatingNav from './components/FloatingNav.vue';
   .nav-links {
     display: none;
   }
+}
+
+.main-content {
+  min-height: 100vh;
+  width: 100%;
 }
 </style>

@@ -5,7 +5,8 @@ import { FaBookOpen } from 'oh-vue-icons/icons'
 import { GiAchievement } from 'oh-vue-icons/icons'
 import { CoExternalLink } from 'oh-vue-icons/icons'
 import { addIcons, OhVueIcon } from 'oh-vue-icons'
-import { inject } from '@vercel/analytics';
+import { inject } from '@vercel/analytics'
+import { injectSpeedInsights } from '@vercel/speed-insights'
 
 import VueTippy from 'vue-tippy'
 import './assets/custom_tippy.css'
@@ -18,7 +19,8 @@ addIcons(FaBookOpen, GiAchievement, CoExternalLink)
 const app = createApp(App)
 inject({
   mode: dev ? 'development' : 'production',
-});
+})
+injectSpeedInsights()
 
 app.component('v-icon', OhVueIcon)
 app.component('inline-svg', InlineSvg)
@@ -27,14 +29,14 @@ app.use(
   VueTippy,
   // optional
   {
-    directive: 'tippy', 
-    component: 'tippy', 
+    directive: 'tippy',
+    component: 'tippy',
     theme: 'custom',
     componentSingleton: 'tippy-singleton',
     defaultProps: {
       placement: 'auto-end',
       allowHTML: true,
-    }, 
+    },
   },
 )
 

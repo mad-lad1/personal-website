@@ -6,7 +6,6 @@ import { GiAchievement } from 'oh-vue-icons/icons'
 import { CoExternalLink } from 'oh-vue-icons/icons'
 import { addIcons, OhVueIcon } from 'oh-vue-icons'
 import { inject } from '@vercel/analytics';
-import { dev } from '$app/environment';
 
 import VueTippy from 'vue-tippy'
 import './assets/custom_tippy.css'
@@ -14,7 +13,7 @@ import './assets/custom_tippy.css'
 import InlineSvg from 'vue-inline-svg'
 import App from './App.vue'
 import router from './router'
-
+const dev = process.env.NODE_ENV !== 'production'
 addIcons(FaBookOpen, GiAchievement, CoExternalLink)
 const app = createApp(App)
 inject({

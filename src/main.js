@@ -5,6 +5,9 @@ import { FaBookOpen } from 'oh-vue-icons/icons'
 import { GiAchievement } from 'oh-vue-icons/icons'
 import { CoExternalLink } from 'oh-vue-icons/icons'
 import { addIcons, OhVueIcon } from 'oh-vue-icons'
+import { inject } from '@vercel/analytics';
+import { dev } from '$app/environment';
+
 import VueTippy from 'vue-tippy'
 import './assets/custom_tippy.css'
 
@@ -14,6 +17,9 @@ import router from './router'
 
 addIcons(FaBookOpen, GiAchievement, CoExternalLink)
 const app = createApp(App)
+inject({
+  mode: dev ? 'development' : 'production',
+});
 
 app.component('v-icon', OhVueIcon)
 app.component('inline-svg', InlineSvg)

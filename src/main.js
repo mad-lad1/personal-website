@@ -5,16 +5,12 @@ import { FaBookOpen } from 'oh-vue-icons/icons'
 import { GiAchievement } from 'oh-vue-icons/icons'
 import { CoExternalLink } from 'oh-vue-icons/icons'
 import { addIcons, OhVueIcon } from 'oh-vue-icons'
-import Tooltip from '@programic/vue3-tooltip'
-import '@programic/vue3-tooltip/dist/index.css'
+import VueTippy from 'vue-tippy'
+import './assets/custom_tippy.css'
 
 import InlineSvg from 'vue-inline-svg'
 import App from './App.vue'
 import router from './router'
-
-const tooltipOptions = {
-  type: 'light',
-}
 
 addIcons(FaBookOpen, GiAchievement, CoExternalLink)
 const app = createApp(App)
@@ -22,6 +18,19 @@ const app = createApp(App)
 app.component('v-icon', OhVueIcon)
 app.component('inline-svg', InlineSvg)
 app.use(router)
-app.use(Tooltip, tooltipOptions)
+app.use(
+  VueTippy,
+  // optional
+  {
+    directive: 'tippy', 
+    component: 'tippy', 
+    theme: 'custom',
+    componentSingleton: 'tippy-singleton',
+    defaultProps: {
+      placement: 'auto-end',
+      allowHTML: true,
+    }, 
+  },
+)
 
 app.mount('#app')

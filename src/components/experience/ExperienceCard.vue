@@ -11,16 +11,32 @@
         <div class="toggle-indicator">
           <v-icon
             name="fa-book-open"
-            v-if="isStoryMode"
             animation="pulse"
             fill="#000"
+            v-if="isStoryMode"
+            v-tippy="{
+              content: 'Story Mode',
+              theme: 'custom',
+              animation: 'shift-away',
+              placement: 'bottom',
+            }"
+            role="img"
+            tabindex="-1"
           />
           <v-icon
             name="gi-achievement"
-            v-else
             animation="pulse"
             fill="#fff"
             scale="1.5"
+            v-else
+            v-tippy="{
+              content: 'Achievements Mode',
+              theme: 'custom',
+              animation: 'shift-away',
+              placement: 'bottom',
+            }"
+            role="img"
+            tabindex="-1"
           />
         </div>
       </div>
@@ -338,4 +354,5 @@ const onMouseLeave = () => {
     right: 1rem;
   }
 }
+
 </style>
